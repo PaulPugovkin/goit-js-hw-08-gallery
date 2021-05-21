@@ -58,6 +58,7 @@ function closeLightbox(event) {
   const overlay = event.target.classList.contains('lightbox__overlay')
   if (!btn && !overlay) return;
   modalHandler.classList.remove('is-open');
+  window.removeEventListener('keydown', keyEventsLightbox);
 
   lightboxImage.src = '';
   lightboxImage.alt = '';
